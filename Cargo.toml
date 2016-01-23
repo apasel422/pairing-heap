@@ -6,7 +6,7 @@ license = "MIT/Apache-2.0"
 homepage = "https://github.com/apasel422/pairing-heap"
 repository = "https://github.com/apasel422/pairing-heap"
 documentation = "https://apasel422.github.io/pairing-heap/pairing_heap"
-keywords = ["collection", "priority queue"]
+keywords = ["collection", "priority-queue"]
 description = "A priority queue based on a pairing heap."
 
 [features]
