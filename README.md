@@ -2,7 +2,7 @@
 
 A priority queue based on a pairing heap.
 
-Documentation is available at https://apasel422.github.io/pairing-heap/pairing-heap.
+Documentation is available at https://apasel422.github.io/pairing-heap/pairing_heap.
 
 To use `pairing-heap` with Cargo, add this to `Cargo.toml`:
 
