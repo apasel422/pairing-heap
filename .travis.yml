@@ -1,0 +1,16 @@
+language: rust
+sudo: false
+matrix:
+    include:
+        - rust: nightly
+          env: FEATURES="--features binary_heap_extras"
+        - rust: beta
+        - rust: stable
+script:
+    - cargo build $FEATURES
+    - cargo test $FEATURES
+    - cargo doc --no-deps $FEATURES
+after_success: |
+    [ $TRAVIS_TAG ] &&
+    [ $TRAVIS_RUST_VERSION == nightly ] &&
+    bash deploy-docs.sh
