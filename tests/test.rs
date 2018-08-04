@@ -1,5 +1,3 @@
-#![cfg_attr(feature = "binary_heap_extras", feature(binary_heap_extras))]
-
 extern crate pairing_heap;
 extern crate quickcheck;
 
@@ -17,23 +15,11 @@ enum Op<T> {
     Replace(T),
 }
 
-#[cfg(feature = "binary_heap_extras")]
-fn push_pop_b<T: Ord>(heap: &mut BinaryHeap<T>, item: T) -> T {
-    heap.push_pop(item)
-}
-
-#[cfg(not(feature = "binary_heap_extras"))]
 fn push_pop_b<T: Ord>(heap: &mut BinaryHeap<T>, item: T) -> T {
     heap.push(item);
     heap.pop().expect("heap was empty after a call to `push`")
 }
 
-#[cfg(feature = "binary_heap_extras")]
-fn replace_b<T: Ord>(heap: &mut BinaryHeap<T>, item: T) -> Option<T> {
-    heap.replace(item)
-}
-
-#[cfg(not(feature = "binary_heap_extras"))]
 fn replace_b<T: Ord>(heap: &mut BinaryHeap<T>, item: T) -> Option<T> {
     let max = heap.pop();
     heap.push(item);
